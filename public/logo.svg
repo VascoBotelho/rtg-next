@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.25">
+<path d="M204 290.5L195 290.5L411.688 491.5H420L420 396L420 290.5H415.5L415.5 392L204 290.5Z" fill="#2E3757"/>
+<path d="M491.5 223V219L420 19.5L415.5 19.5L415.5 223L491.5 223Z" fill="#2E3757"/>
+<path d="M18.5 126.5L18.5 119L227 215L235.5 223L122.5 223L18.5 126.5Z" fill="#2E3757"/>
+<path d="M204 290.5L195 290.5L411.688 491.5H420L420 396L420 290.5H415.5L415.5 392L204 290.5Z" stroke="#2E3757" stroke-linejoin="round"/>
+<path d="M491.5 223V219L420 19.5L415.5 19.5L415.5 223L491.5 223Z" stroke="#2E3757" stroke-linejoin="round"/>
+<path d="M18.5 126.5L18.5 119L227 215L235.5 223L122.5 223L18.5 126.5Z" stroke="#2E3757" stroke-linejoin="round"/>
+</g>
+<path d="M491.5 491.5L420 491.5L203.352 290.5L307.5 290.505L420 396L420 290.5L491.5 290.5L491.5 491.5Z" fill="white"/>
+<path d="M491.5 19.5L420 19.5L420 219L491.5 219L491.5 19.5Z" fill="white"/>
+<path d="M18.5 119L18.5 19.5L231.247 219L126.285 219L18.5 119Z" fill="white"/>
+<path d="M491.5 491.5L420 491.5L203.352 290.5L307.5 290.505L420 396L420 290.5L491.5 290.5L491.5 491.5Z" stroke="white" stroke-linejoin="round"/>
+<path d="M491.5 19.5L420 19.5L420 219L491.5 219L491.5 19.5Z" stroke="white" stroke-linejoin="round"/>
+<path d="M18.5 119L18.5 19.5L231.247 219L126.285 219L18.5 119Z" stroke="white" stroke-linejoin="round"/>
+</svg>
