@@ -10,8 +10,7 @@ import { Navigation } from "./Navigation"
 
 const variants = {
   hidden: { opacity: 0 },
-  enter: { opacity: 1 },
-  exit: { opacity: 0 },
+  visable: { opacity: 1 },
 }
 
 interface Props {
@@ -31,16 +30,17 @@ export const Layout: NextPage<Props> = ({ children }) => {
     <motion.div
       initial={{ backgroundColor: path ? painted : defaultPaint }}
       animate={{ backgroundColor: path ? painted : defaultPaint }}
+      className="overflow-y-auto"
     >
       <Navigation />
 
       <motion.main
         initial="hidden"
-        animate="enter"
-        exit="exit"
+        animate="visable"
+        exit="hidden"
         variants={variants}
         transition={{ type: "tween" }}
-        className="px-36 pt-36 min-h-screen"
+        className="px-36 pt-48 min-h-screen overflow-auto"
       >
         {children}
       </motion.main>

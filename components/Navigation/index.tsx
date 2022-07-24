@@ -3,13 +3,19 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useTheme } from "next-themes"
 
-import { motion, useInView, Variants } from "framer-motion"
 import { useRef } from "react"
-import {
-  MdOutlineLightMode,
-  MdOutlineDarkMode,
-  MdOpenInNew,
-} from "react-icons/md"
+import { Disclosure } from "@headlessui/react"
+import { motion, useInView, Variants } from "framer-motion"
+
+import ExternalLinkIcon from "@heroicons/react/solid/ExternalLinkIcon"
+import SunIcon from "@heroicons/react/solid/SunIcon"
+import MoonIcon from "@heroicons/react/solid/MoonIcon"
+
+// import {
+//   MdOutlineLightMode,
+//   MdOutlineDarkMode,
+//   MdOpenInNew,
+// } from "react-icons/md"
 
 import { paint } from "../../core/paint"
 
@@ -18,12 +24,14 @@ import Auth from "./Auth"
 
 const variants: Variants = {
   default: ({ dark }) => ({
-    padding: "1rem 4rem",
-    backgroundColor: dark ? "#4752C4" : "#7289DA",
+    padding: "1rem 6rem",
+    backgroundColor: dark ? "#000" : "#7289DA",
+    boxShadow: "rgb(51 51 51) 0 -2px 10px 0",
   }),
   top: ({ dark }) => ({
-    padding: "4rem 9rem",
+    padding: "4rem 10rem",
     backgroundColor: dark ? "#4752C400" : "#7289DA00",
+    boxShadow: "rgb(51 51 51 / 0%) 0 -2px 10px 0",
   }),
 }
 
@@ -59,18 +67,24 @@ export const Navigation: NextPage = () => {
             />
           </Link>
 
-          <div className="flex items-center pr-6 text-white">
-            <a
-              href="https://discord.com/oauth2/authorize?client_id=693300079838101504&permissions=16862224&scope=bot%20applications.commands"
-              target="_blank"
-              rel="noreferrer"
-              className="pr-2 text-sm font-semibold uppercase"
-            >
-              Invite
-            </a>
-
-            <MdOpenInNew />
-          </div>
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=693300079838101504&permissions=16862224&scope=bot%20applications.commands"
+            target="_blank"
+            rel="noreferrer"
+            className="flex
+              items-center
+              py-1
+              px-2
+              text-sm
+              text-white
+              font-semibold
+              uppercase
+              hover:bg-primary-200
+            "
+          >
+            <span className="mr-1">Invite</span>
+            <ExternalLinkIcon className="h-5 w-5" />
+          </a>
 
           <Link href="/premium">premium</Link>
 
@@ -79,13 +93,13 @@ export const Navigation: NextPage = () => {
 
         <div className="flex items-center">
           <button
-            className="mr-6 p-1 rounded-md hover:bg-primary-200"
+            className="mr-6 p-1 rounded-md hover:bg-primary-200 hover:dark:bg-white hover:dark:text-black"
             onClick={() => setTheme(dark ? "light" : "dark")}
           >
             {dark ? (
-              <MdOutlineLightMode className="w-7 h-7 text-white" />
+              <SunIcon className="w-7 h-7" />
             ) : (
-              <MdOutlineDarkMode className="w-7 h-7 text-white" />
+              <MoonIcon className="w-7 h-7 text-white" />
             )}
           </button>
 
