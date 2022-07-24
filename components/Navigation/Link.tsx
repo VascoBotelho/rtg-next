@@ -5,17 +5,18 @@ import { ReactNode } from "react"
 interface Props {
   children: ReactNode
   href: `/${string}`
+  className?: string
   disableHover?: boolean
 }
 
-const Link: NextPage<Props> = ({ children, href, disableHover }) => (
-  <div className="mr-4">
+const Link: NextPage<Props> = ({ children, href, className, disableHover }) => (
+  <div className={`mr-4 ${className}`}>
     <NextLink href={href}>
       <span
         className={`
           py-1
           px-2
-          rounded-sm
+          rounded-md
           text-sm
           text-white
           font-semibold

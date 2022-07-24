@@ -3,6 +3,8 @@ import DiscordProvider from "next-auth/providers/discord"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client"
 
+import { signIn } from "../../../core/auth"
+
 const prisma = new PrismaClient()
 
 export default NextAuth({
@@ -13,4 +15,7 @@ export default NextAuth({
       clientSecret: process.env.DISCORD_CLIENT_SECRET!,
     }),
   ],
+  events: {
+    signIn,
+  },
 })

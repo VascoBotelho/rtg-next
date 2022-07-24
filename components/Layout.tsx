@@ -4,6 +4,8 @@ import { useRouter } from "next/router"
 import { ReactNode } from "react"
 import { motion } from "framer-motion"
 
+import { paint } from "../core/paint"
+
 import { Navigation } from "./Navigation"
 
 const variants = {
@@ -19,24 +21,16 @@ interface Props {
 export const Layout: NextPage<Props> = ({ children }) => {
   const { pathname } = useRouter()
   const { theme } = useTheme()
-  const path = ["/", "/premium"].includes(pathname)
+  const path = paint.includes(pathname)
+
+  const dark = theme === "dark"
+  const painted = dark ? "#4752C4" : "#7289DA"
+  const defaultPaint = dark ? "#4752C4" : "#FFF"
 
   return (
     <motion.div
-      initial={{
-        backgroundColor: path
-          ? theme === "dark"
-            ? "#4752C4"
-            : "#7289DA"
-          : "#FFF",
-      }}
-      animate={{
-        backgroundColor: path
-          ? theme === "dark"
-            ? "#4752C4"
-            : "#7289DA"
-          : "#FFF",
-      }}
+      initial={{ backgroundColor: path ? painted : defaultPaint }}
+      animate={{ backgroundColor: path ? painted : defaultPaint }}
     >
       <Navigation />
 
@@ -46,7 +40,7 @@ export const Layout: NextPage<Props> = ({ children }) => {
         exit="exit"
         variants={variants}
         transition={{ type: "tween" }}
-        className="px-32 pt-36 min-h-screen"
+        className="px-36 pt-36 min-h-screen"
       >
         {children}
       </motion.main>

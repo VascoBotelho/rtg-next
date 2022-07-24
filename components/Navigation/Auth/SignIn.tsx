@@ -1,5 +1,6 @@
 import type { NextPage } from "next"
 import NextLink from "next/link"
+import Image from "next/image"
 import { useSession, signOut } from "next-auth/react"
 import { Menu, Transition } from "@headlessui/react"
 import { forwardRef, Fragment, ReactNode } from "react"
@@ -18,16 +19,19 @@ const Link = forwardRef<any, Props>(({ href, children, ...rest }, ref) => (
     </a>
   </NextLink>
 ))
+Link.displayName = "Link"
 
 const Auth: NextPage = () => {
   const { data: session } = useSession()
 
   return (
     <Menu as="div" className="relative">
-      <Menu.Button>
-        <img
+      <Menu.Button className="flex items-center">
+        <Image
           src={session?.user?.image!}
           alt={session?.user?.name!}
+          width={56}
+          height={56}
           className="rounded-full w-[56px] h-[56px] cursor-pointer"
         />
       </Menu.Button>
@@ -52,7 +56,7 @@ const Auth: NextPage = () => {
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                 >
                   <MdAccountCircle />
-                  Account
+                  {session?.user?.name}
                 </Link>
               )}
             </Menu.Item>
