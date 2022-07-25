@@ -13,7 +13,7 @@ const Premium: NextPage = () => {
       <NextSeo title="Premium" />
       premium
       <button onClick={() => setIsOpen(!isOpen)}>modal</button>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+      {/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
         <Dialog.Panel>
           <Dialog.Title>Deactivate account</Dialog.Title>
           <Dialog.Description>
@@ -28,7 +28,60 @@ const Premium: NextPage = () => {
           <button onClick={() => setIsOpen(false)}>Deactivate</button>
           <button onClick={() => setIsOpen(false)}>Cancel</button>
         </Dialog.Panel>
-      </Dialog>
+      </Dialog> */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Footer />
     </>
   )

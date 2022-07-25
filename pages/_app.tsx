@@ -34,7 +34,7 @@ export default function MyApp({
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Layout>
-            <Component {...pageProps} key={router.route} />
+            <Component {...pageProps} />
           </Layout>
         </AnimatePresence>
       </SessionProvider>
