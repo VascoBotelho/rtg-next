@@ -1,69 +1,10 @@
 import type { NextPage } from "next"
 import { NextSeo } from "next-seo"
 
-import { Footer } from "../components"
+import { Container } from "../components"
 
 const Docs: NextPage = () => {
-  return (
-    <>
-      <NextSeo title="Docs" />
-      docs
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Footer />
-    </>
-  )
+  return <Container seo="Docs">docs</Container>
 }
 
 export default Docs

@@ -37,16 +37,7 @@ export const Layout: NextPage<Props> = ({ children }) => {
     >
       <Navigation />
 
-      <motion.main
-        initial="hidden"
-        animate="visable"
-        exit="hidden"
-        variants={variants}
-        transition={{ type: "tween" }}
-        className="px-36 pt-48 min-h-screen overflow-auto"
-      >
-        {children}
-      </motion.main>
+      {children}
     </motion.div>
   )
 }

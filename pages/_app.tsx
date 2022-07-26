@@ -2,7 +2,6 @@ import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import { ThemeProvider } from "next-themes"
 import { DefaultSeo } from "next-seo"
-
 import { SessionProvider } from "next-auth/react"
 import { AnimatePresence } from "framer-motion"
 import { Toaster } from "react-hot-toast"
@@ -28,15 +27,15 @@ export default function MyApp({
           toastOptions={{ className: "dark:bg-black dark:text-white" }}
         />
 
-        <AnimatePresence
-          exitBeforeEnter
-          initial={false}
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </AnimatePresence>
+        <Layout>
+          <AnimatePresence
+            exitBeforeEnter
+            initial={false}
+            onExitComplete={() => window.scrollTo(0, 0)}
+          >
+            <Component {...pageProps} key={router.asPath} />
+          </AnimatePresence>
+        </Layout>
       </SessionProvider>
     </ThemeProvider>
   )

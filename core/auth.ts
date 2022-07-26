@@ -11,8 +11,8 @@ interface SignIn {
 
 export const signIn = async (message: SignIn) => {
   const usr_old = await user_old(message.account.providerAccountId)
-  console.log("🚀 ~ usr_old", usr_old)
+  // console.log("🚀 ~ usr_old", usr_old)
 
   const usr = await user(message.user.id)
-  console.log("🚀 ~ usr", usr)
+  // console.log("🚀 ~ usr", usr)
 }

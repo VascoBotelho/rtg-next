@@ -3,13 +3,13 @@ import { NextSeo } from "next-seo"
 import { useState } from "react"
 import { Dialog } from "@headlessui/react"
 
-import { Footer } from "../components"
+import { Container, Footer } from "../components"
 
 const Premium: NextPage = () => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <>
+    <Container>
       <NextSeo title="Premium" />
       premium
       <button onClick={() => setIsOpen(!isOpen)}>modal</button>
@@ -29,61 +29,7 @@ const Premium: NextPage = () => {
           <button onClick={() => setIsOpen(false)}>Cancel</button>
         </Dialog.Panel>
       </Dialog> */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Footer />
-    </>
+    </Container>
   )
 }
 

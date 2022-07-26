@@ -1,18 +1,15 @@
 import type { NextPage } from "next"
 import { useSession } from "next-auth/react"
+import { Container } from "../components"
 
 const Account: NextPage = () => {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
 
-  if (status === "loading") {
-    return <p>Loading...</p>
-  }
-
-  if (status === "unauthenticated") {
-    return <p>Access Denied</p>
-  }
-
-  return <div>Account</div>
+  return (
+    <Container seo={`rtg - ${session?.user?.name}`} protect>
+      Account
+    </Container>
+  )
 }
 
 export default Account

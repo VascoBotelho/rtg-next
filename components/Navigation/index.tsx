@@ -79,16 +79,32 @@ export const Navigation: NextPage = () => {
                   </div>
 
                   <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div className="flex-shrink-0 flex items-center">
-                      <Link href="/" disableHover>
-                        <Image
-                          src="/logo.svg"
-                          alt="rtg logo"
-                          width={32}
-                          height={32}
-                          className="h-8 w-auto"
-                        />
-                      </Link>
+                    <div className="block lg:hidden">
+                      <div className="flex-shrink-0 flex items-center">
+                        <Link href="/" disableHover>
+                          <Image
+                            src="/logo.svg"
+                            alt="rtg logo"
+                            width={32}
+                            height={32}
+                            className="h-8 w-auto"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+
+                    <div className="hidden lg:block">
+                      <div className="flex-shrink-0 flex items-center">
+                        <Link href="/" disableHover>
+                          <Image
+                            src="/fullogo.svg"
+                            alt="rtg logo"
+                            width={105}
+                            height={32}
+                            className="h-8 w-auto"
+                          />
+                        </Link>
+                      </div>
                     </div>
 
                     <div className="hidden sm:flex items-center space-x-4 sm:ml-4">
@@ -129,9 +145,9 @@ export const Navigation: NextPage = () => {
                       <span className="sr-only">View notifications</span>
 
                       {dark ? (
-                        <SunIcon className="w-7 h-7" />
+                        <MoonIcon className="w-7 h-7" />
                       ) : (
-                        <MoonIcon className="w-7 h-7 text-white" />
+                        <SunIcon className="w-7 h-7 text-white" />
                       )}
                     </button>
 
