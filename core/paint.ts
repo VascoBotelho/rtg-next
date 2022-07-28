@@ -1,1 +1,1 @@
-export const paint = ["/", "/premium"]
+export const paint = ['/', '/premium']

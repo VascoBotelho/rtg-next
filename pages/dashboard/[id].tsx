@@ -1,8 +1,9 @@
-import type { NextPage } from "next"
-import { Layout } from "../../components"
+import { Layout } from '../../components'
+
+import type { NextPage } from 'next'
 
 const Dashboard: NextPage = () => {
-  return <div>Dashboard</div>
+	return <div>Dashboard</div>
 }
 
 export default Dashboard

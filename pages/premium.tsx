@@ -1,19 +1,19 @@
-import type { NextPage } from "next"
-import { NextSeo } from "next-seo"
-import { useState } from "react"
-import { Dialog } from "@headlessui/react"
+import { Container } from '../components'
+import { Dialog } from '@headlessui/react'
+import { useState } from 'react'
 
-import { Container, Footer } from "../components"
+import type { NextPage } from 'next'
+import { NextSeo } from 'next-seo'
 
 const Premium: NextPage = () => {
-  const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(true)
 
-  return (
-    <Container>
-      <NextSeo title="Premium" />
-      premium
-      <button onClick={() => setIsOpen(!isOpen)}>modal</button>
-      {/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+	return (
+		<Container footer>
+			<NextSeo title='Premium' />
+			premium
+			<button onClick={() => setIsOpen(!isOpen)}>modal</button>
+			{/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
         <Dialog.Panel>
           <Dialog.Title>Deactivate account</Dialog.Title>
           <Dialog.Description>
@@ -29,8 +29,8 @@ const Premium: NextPage = () => {
           <button onClick={() => setIsOpen(false)}>Cancel</button>
         </Dialog.Panel>
       </Dialog> */}
-    </Container>
-  )
+		</Container>
+	)
 }
 
 export default Premium

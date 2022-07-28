@@ -1,0 +1,16 @@
+{
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": false,
+	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"quoteProps": "preserve",
+	"trailingComma": "none",
+	"bracketSpacing": true,
+	"arrowParens": "avoid",
+	"endOfLine": "lf",
+	"importOrder": ["^next(.*)$", "^./"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

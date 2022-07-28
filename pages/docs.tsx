@@ -1,10 +1,13 @@
-import type { NextPage } from "next"
-import { NextSeo } from "next-seo"
+import { Container } from '../components'
 
-import { Container } from "../components"
+import type { NextPage } from 'next'
 
 const Docs: NextPage = () => {
-  return <Container seo="Docs">docs</Container>
+	return (
+		<Container seo='Docs' footer>
+			sidebar docs
+		</Container>
+	)
 }
 
 export default Docs

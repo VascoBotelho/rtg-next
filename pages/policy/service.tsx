@@ -1,8 +1,9 @@
-import type { NextPage } from "next"
-import { Layout } from "../../components"
+import { Container } from '../../components'
+
+import type { NextPage } from 'next'
 
 const Service: NextPage = () => {
-  return <div>Account</div>
+	return <Container footer></Container>
 }
 
 export default Service
