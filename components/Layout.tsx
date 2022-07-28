@@ -1,12 +1,14 @@
-import { paint } from '../core/paint'
-import { Variants, motion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 import type { NextPage } from 'next'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
-import { Navigation } from './Navigation'
+import { Variants, motion } from 'framer-motion'
+
+import { paint } from 'core/paint'
+
+import Navigation from './Navigation'
 
 const variants: Variants = {
 	paint: ({ backgroundColor }) => ({ backgroundColor }),
@@ -18,7 +20,7 @@ interface Props {
 	children?: ReactNode
 }
 
-export const Layout: NextPage<Props> = ({ children }) => {
+const Layout: NextPage<Props> = ({ children }) => {
 	const { pathname } = useRouter()
 	const { theme } = useTheme()
 
@@ -41,3 +43,5 @@ export const Layout: NextPage<Props> = ({ children }) => {
 		</motion.div>
 	)
 }
+
+export default Layout

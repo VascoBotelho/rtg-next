@@ -1,8 +1,9 @@
-import { Navigation } from '..'
-import Link from '../Link'
 import { Disclosure } from '@headlessui/react'
 
 import type { NextPage } from 'next'
+
+import { Navigation } from '..'
+import Link from '../Link'
 
 interface Props {
 	navigation: Navigation[]

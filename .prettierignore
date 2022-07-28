@@ -3,8 +3,6 @@
 /.github
 
 # tests
-/.nyc_output
-/coverage
 /cypress
 cypress.config.ts
 cypress.env.json
@@ -12,6 +10,8 @@ cypress.env.json
 /node_modules
 
 /build
+
+/.next
 
 package.json
 yarn.lock

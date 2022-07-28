@@ -1,19 +1,22 @@
-import { topnavState } from '../../atoms'
-import { paint } from '../../core/paint'
-import { useWindowDimensions } from '../../hooks'
 import { Disclosure } from '@headlessui/react'
 import ExternalLinkIcon from '@heroicons/react/solid/ExternalLinkIcon'
 import MoonIcon from '@heroicons/react/solid/MoonIcon'
 import SunIcon from '@heroicons/react/solid/SunIcon'
-import { Variants, motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { useSetRecoilState } from 'recoil'
+
+import { useEffect, useRef } from 'react'
 
 import type { NextPage } from 'next'
 import { signIn, useSession } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+
+import { Variants, motion, useInView } from 'framer-motion'
+import { useSetRecoilState } from 'recoil'
+
+import { topnavState } from 'atoms'
+import { paint } from 'core/paint'
+import { useWindowDimensions } from 'hooks'
 
 import Dropdown from './Dropdown'
 import Link from './Link'
@@ -43,7 +46,7 @@ const variants: Variants = {
 	})
 }
 
-export const Navigation: NextPage = () => {
+const Navigation: NextPage = () => {
 	const { pathname } = useRouter()
 	const { data: session } = useSession()
 	const { theme, setTheme } = useTheme()
@@ -58,7 +61,7 @@ export const Navigation: NextPage = () => {
 	const top = width > 600 && isInView && paint.includes(pathname)
 	const dark = theme === 'dark'
 
-	setTopnav(top)
+	useEffect(() => setTopnav(top), [top])
 
 	return (
 		<>
@@ -171,3 +174,5 @@ export const Navigation: NextPage = () => {
 		</>
 	)
 }
+
+export default Navigation

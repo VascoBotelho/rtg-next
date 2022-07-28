@@ -10,7 +10,14 @@
 	"bracketSpacing": true,
 	"arrowParens": "avoid",
 	"endOfLine": "lf",
-	"importOrder": ["^next(.*)$", "^./"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+	"importOrder": [
+		"^react$",
+		"^next(.*)$",
+		"^recoil|framer-motion$",
+		"^atoms|core/(.*)|hooks|lib|utils$",
+		"^components/(.*)$",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
 }

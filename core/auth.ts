@@ -1,7 +1,7 @@
+import { Account, Profile, User } from 'next-auth'
+
 import { user } from '../prisma/user'
 import { user_old } from '../prisma/users'
-
-import { Account, Profile, User } from 'next-auth'
 
 interface SignIn {
 	user: User

@@ -1,7 +1,8 @@
-import { Container } from '../components'
+import type { NextPage } from 'next'
+
 import { motion } from 'framer-motion'
 
-import type { NextPage } from 'next'
+import Container from 'components/Container'
 
 const Home: NextPage = () => {
 	return (

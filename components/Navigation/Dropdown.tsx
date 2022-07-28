@@ -1,10 +1,12 @@
-import { Navigation } from '..'
 import { Menu, Transition } from '@headlessui/react'
+
 import { Fragment } from 'react'
 
 import type { NextPage } from 'next'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+
+import { Navigation } from '..'
 
 const navigation: Navigation[] = [
 	{ name: 'Your Account', href: '/account' },

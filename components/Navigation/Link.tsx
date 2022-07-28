@@ -1,9 +1,10 @@
-import { classNames } from '../../utils'
 import { ReactNode } from 'react'
 
 import type { NextPage } from 'next'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+
+import { classNames } from '../../utils'
 
 interface Props {
 	children: ReactNode

@@ -1,6 +1,6 @@
-import { Container } from '../components'
-
 import type { NextPage } from 'next'
+
+import Container from 'components/Container'
 
 const Docs: NextPage = () => {
 	return (

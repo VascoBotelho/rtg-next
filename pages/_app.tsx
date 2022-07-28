@@ -1,13 +1,16 @@
-import { Layout } from '../components'
-import '../styles/globals.css'
-import { AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
-import { RecoilRoot } from 'recoil'
 
 import { SessionProvider } from 'next-auth/react'
 import { DefaultSeo } from 'next-seo'
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
+
+import { AnimatePresence } from 'framer-motion'
+import { RecoilRoot } from 'recoil'
+
+import Layout from 'components/Layout'
+
+import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps: { session, ...pageProps }, router }: AppProps) {
 	return (

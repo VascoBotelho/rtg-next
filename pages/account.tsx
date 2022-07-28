@@ -1,7 +1,7 @@
-import { Container } from '../components'
-
 import type { NextPage } from 'next'
 import { useSession } from 'next-auth/react'
+
+import Container from 'components/Container'
 
 const Account: NextPage = () => {
 	const { data: session } = useSession()
