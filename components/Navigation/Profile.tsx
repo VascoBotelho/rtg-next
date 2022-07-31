@@ -1,27 +1,31 @@
-import { Menu, Transition } from '@headlessui/react'
-
 import { Fragment } from 'react'
 
 import type { NextPage } from 'next'
 import { signOut, useSession } from 'next-auth/react'
+import Image from 'next/image'
 import Link from 'next/link'
 
-import { Navigation } from '..'
+import { useTranslation } from 'hooks'
+
+import { Menu, Transition } from '@headlessui/react'
+
+import { Navigation } from 'types'
 
 const navigation: Navigation[] = [
-	{ name: 'Your Account', href: '/account' },
-	{ name: 'Dashboard', href: '/dashboard' }
+	{ name: 'account', href: '/account' },
+	{ name: 'dashboard', href: '/dashboard' }
 ]
 
 const MobilePanel: NextPage = () => {
 	const { data: session } = useSession()
+	const { t } = useTranslation('navigation')
 
 	return (
 		<Menu as='div' className='ml-5 relative'>
 			<Menu.Button className='flex text-sm rounded-full'>
-				<span className='sr-only'>Open user menu</span>
+				<span className='sr-only'>Open profile menu</span>
 
-				<img className='h-9 w-9 rounded-full' src={session?.user?.image!} alt={session?.user?.name!} />
+				<Image src={session?.user?.image!} alt={session?.user?.name!} width={36} height={36} className='rounded-full' />
 			</Menu.Button>
 
 			<Transition
@@ -38,7 +42,7 @@ const MobilePanel: NextPage = () => {
 						<Menu.Item key={item.name}>
 							<Link href={item.href}>
 								<span className='block px-4 py-2 text-sm cursor-pointer text-black dark:text-white hover:bg-gray-100 hover:dark:bg-gray-800'>
-									{item.name}
+									{t(item.name)}
 								</span>
 							</Link>
 						</Menu.Item>
@@ -49,7 +53,7 @@ const MobilePanel: NextPage = () => {
 							className='block px-4 py-2 text-sm cursor-pointer text-black dark:text-white hover:bg-gray-100 hover:dark:bg-gray-800'
 							onClick={() => signOut()}
 						>
-							Sign out
+							{t('logout')}
 						</span>
 					</Menu.Item>
 				</Menu.Items>

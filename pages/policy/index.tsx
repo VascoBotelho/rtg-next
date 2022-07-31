@@ -38,7 +38,7 @@ const Policy: NextPage = () => {
 
 				<p>
 					All transactions for purchase of our services are made through payment gateways such as{' '}
-					<a href='https://stripe.com' target='_blank'>
+					<a href='https://stripe.com' target='_blank' rel='noreferrer'>
 						Stripe
 					</a>{' '}
 					that uses SSL encryption. These payment gateways are safe and secure for using all types of credit cards and

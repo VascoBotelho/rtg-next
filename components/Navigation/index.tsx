@@ -1,9 +1,4 @@
-import { Disclosure } from '@headlessui/react'
-import ExternalLinkIcon from '@heroicons/react/solid/ExternalLinkIcon'
-import MoonIcon from '@heroicons/react/solid/MoonIcon'
-import SunIcon from '@heroicons/react/solid/SunIcon'
-
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import type { NextPage } from 'next'
 import { signIn, useSession } from 'next-auth/react'
@@ -16,21 +11,25 @@ import { useSetRecoilState } from 'recoil'
 
 import { topnavState } from 'atoms'
 import { paint } from 'core/paint'
-import { useWindowDimensions } from 'hooks'
+import { useTranslation, useWindowDimensions } from 'hooks'
 
-import Dropdown from './Dropdown'
+import { Disclosure } from '@headlessui/react'
+
+import { Navigation } from 'types'
+
 import Link from './Link'
+import Locales from './Locales'
 import MobileButton from './Mobile/Button'
 import MobilePanel from './Mobile/Panel'
+import Profile from './Profile'
 
-export interface Navigation {
-	name: string
-	href: string
-}
+import ExternalLinkIcon from '@heroicons/react/solid/ExternalLinkIcon'
+import MoonIcon from '@heroicons/react/solid/MoonIcon'
+import SunIcon from '@heroicons/react/solid/SunIcon'
 
 const navigation: Navigation[] = [
-	{ name: 'Premium', href: '/premium' },
-	{ name: 'Docs', href: '/docs' }
+	{ name: 'premium', href: '/premium' },
+	{ name: 'documentation', href: '/docs' }
 ]
 
 const variants: Variants = {
@@ -46,10 +45,11 @@ const variants: Variants = {
 	})
 }
 
-const Navigation: NextPage = () => {
+const Nav: NextPage = () => {
 	const { pathname } = useRouter()
 	const { data: session } = useSession()
 	const { theme, setTheme } = useTheme()
+	const { t } = useTranslation('navigation')
 
 	const ref = useRef(null)
 	const isInView = useInView(ref)
@@ -61,7 +61,7 @@ const Navigation: NextPage = () => {
 	const top = width > 600 && isInView && paint.includes(pathname)
 	const dark = theme === 'dark'
 
-	useEffect(() => setTopnav(top), [top])
+	useEffect(() => setTopnav(top), [setTopnav, top])
 
 	return (
 		<>
@@ -78,7 +78,7 @@ const Navigation: NextPage = () => {
 				<Disclosure>
 					{({ open }) => (
 						<>
-							<div className='max-w-[96rem] mx-auto px-2 sm:px-6 lg:px-8'>
+							<div className='px-2 lg:px-8 max-w-[96rem] mx-auto'>
 								<div className='flex items-center justify-between h-16'>
 									<div className='inset-y-0 left-0 flex items-center sm:hidden'>
 										{/* Mobile menu button*/}
@@ -105,7 +105,7 @@ const Navigation: NextPage = () => {
 										<div className='hidden sm:flex items-center space-x-4 sm:ml-4'>
 											{navigation.map(item => (
 												<Link key={item.name} href={item.href}>
-													{item.name}
+													{t(item.name as any)}
 												</Link>
 											))}
 										</div>
@@ -128,23 +128,27 @@ const Navigation: NextPage = () => {
                         dark:${top ? 'bg-black' : 'bg-white'}
                       `}
 										>
-											Invite
+											{t('invite')}
 											<ExternalLinkIcon className='ml-1 h-5 w-5' />
 										</a>
 
+										{/* Theme mode */}
 										<button
 											type='button'
 											className='ml-5 p-[.200rem] rounded-full hover:bg-primary-200 hover:dark:bg-discord-50'
 											onClick={() => setTheme(dark ? 'light' : 'dark')}
 										>
-											<span className='sr-only'>View notifications</span>
+											<span className='sr-only'>Theme mode</span>
 
 											{dark ? <MoonIcon className='w-7 h-7' /> : <SunIcon className='w-7 h-7 text-white' />}
 										</button>
 
+										{/* Locales dropdown */}
+										<Locales />
+
 										{/* Profile dropdown */}
 										{session ? (
-											<Dropdown />
+											<Profile />
 										) : (
 											<button
 												className='
@@ -159,7 +163,7 @@ const Navigation: NextPage = () => {
                          '
 												onClick={() => signIn('discord')}
 											>
-												Login
+												{t('login')}
 											</button>
 										)}
 									</div>
@@ -175,4 +179,4 @@ const Navigation: NextPage = () => {
 	)
 }
 
-export default Navigation
+export default Nav

@@ -77,8 +77,9 @@ const Privacy: NextPage = () => {
 				<h3>Service Providers</h3>
 
 				<p>
-					We may employ third party companies and individuals to facilitate our Service ("Service Providers"), provide
-					the Service on our behalf, perform Service-related services or assist us in analysing how our Service is used.
+					We may employ third party companies and individuals to facilitate our Service (&quot;Service Providers&quot;),
+					provide the Service on our behalf, perform Service-related services or assist us in analysing how our Service
+					is used.
 				</p>
 
 				<p>
@@ -108,7 +109,7 @@ const Privacy: NextPage = () => {
 
 				<p>
 					For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page:{' '}
-					<a href='https://policies.google.com/privacy?hl=en' target='_blank'>
+					<a href='https://policies.google.com/privacy?hl=en' target='_blank' rel='noreferrer'>
 						policies.google.com/privacy
 					</a>
 				</p>
@@ -140,7 +141,7 @@ const Privacy: NextPage = () => {
 
 				<p>
 					Their Privacy Policy can be viewed at{' '}
-					<a href='https://stripe.com/en-gb-pt/privacy' target='_blank'>
+					<a href='https://stripe.com/en-gb-pt/privacy' target='_blank' rel='noreferrer'>
 						stripe.com/privacy
 					</a>
 				</p>
@@ -151,8 +152,8 @@ const Privacy: NextPage = () => {
 
 				<p>
 					Our Service may contain links to other sites that are not operated by us. If you click a third party link, you
-					will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site
-					you visit.
+					will be directed to that third party&apos;s site. We strongly advise you to review the Privacy Policy of every
+					site you visit.
 				</p>
 
 				<p>

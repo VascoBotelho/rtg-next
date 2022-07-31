@@ -7,3 +7,5 @@ describe("home page", () => {
     cy.get("body")
   })
 })
+
+export {};

@@ -1,0 +1,14 @@
+{
+	"introduction": {
+		"title": "Bem vindo",
+		"description": "Um Bot do Discord para comunidades que gostam de jogar juntos, este bot torna a criação de equipes mais fácil do que nunca, com um simples comando como <b>!game</b>, o bot pega em todos os utilizadores da chamada e cria automaticamente as equipas para jogar."
+	},
+	"arguments": {
+		"title": "Argumentos",
+		"description": ""
+	},
+	"gamemodes": {
+		"title": "Mapas, roles e modos",
+		"description": ""
+	}
+}

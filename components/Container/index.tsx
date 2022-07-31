@@ -30,7 +30,11 @@ const Container: NextPage<Props> = ({ children, seo, protect, footer }) => {
 
 	return (
 		<>
-			<main className={`mx-auto mb-auto w-full max-w-[96rem] ${footer ? 'min-h-[calc(100vh-283px)]' : 'min-h-screen'}`}>
+			<main
+				className={`mx-auto mb-auto px-2 lg:px-8 w-full max-w-[96rem] ${
+					footer ? 'min-h-[calc(100vh-283px)]' : 'min-h-screen'
+				}`}
+			>
 				<motion.div initial='hidden' animate='visable' exit='hidden' variants={variants} transition={{ type: 'tween' }}>
 					{protect && status === 'loading' ? (
 						'Loading...'
@@ -38,8 +42,8 @@ const Container: NextPage<Props> = ({ children, seo, protect, footer }) => {
 						'Access Denied'
 					) : (
 						<motion.div
-							initial={{ paddingTop: top ? '12rem' : '5rem' }}
-							animate={{ paddingTop: top ? '12rem' : '5rem' }}
+							initial={{ paddingTop: top ? '10rem' : '5rem' }}
+							animate={{ paddingTop: top ? '10rem' : '5rem' }}
 							transition={{ type: 'tween' }}
 						>
 							<NextSeo title={seo} />

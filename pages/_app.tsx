@@ -12,7 +12,7 @@ import Layout from 'components/Layout'
 
 import '../styles/globals.css'
 
-export default function MyApp({ Component, pageProps: { session, ...pageProps }, router }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps }, router }: AppProps) {
 	return (
 		<RecoilRoot>
 			<ThemeProvider attribute='class'>
@@ -35,3 +35,5 @@ export default function MyApp({ Component, pageProps: { session, ...pageProps },
 		</RecoilRoot>
 	)
 }
+
+export default MyApp

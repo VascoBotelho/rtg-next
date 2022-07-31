@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import { paint } from 'core/paint'
 
 import { Category } from './Category'
+import External from './External'
 
 export const Footer: NextPage = () => {
 	const { pathname } = useRouter()
@@ -24,18 +25,21 @@ export const Footer: NextPage = () => {
 			<div className='md:flex md:justify-between md:items-start'>
 				<div className='flex flex-col'>
 					<Link href='/' className='flex items-center mb-6 md:mb-0'>
-						<Image
-							src={theme === 'dark' || !paint.includes(pathname) ? '/full_logo.svg' : '/full_logo_dark.svg'}
-							width={105}
-							height={32}
-							className='cursor-pointer'
-							alt='Vaz Logo'
-						/>
+						<div>
+							<Image
+								src={theme === 'dark' || !paint.includes(pathname) ? '/full_logo.svg' : '/full_logo_dark.svg'}
+								alt='logo'
+								width={105}
+								height={32}
+								className='cursor-pointer'
+							/>
+						</div>
 					</Link>
 
 					<a
 						href='https://discord.com/oauth2/authorize?client_id=693300079838101504&permissions=16862224&scope=bot%20applications.commands'
 						target='_blank'
+						rel='noreferrer'
 					>
 						Invite
 					</a>
@@ -81,15 +85,8 @@ export const Footer: NextPage = () => {
 				</span>
 
 				<div className='flex mt-4 space-x-6 sm:justify-center sm:mt-0'>
-					<a href='#' className='text-black hover:black dark:hover:text-white'>
-						<Image src='/twitter.svg' width={32} height={32} />
-						<span className='sr-only'>Twitter page</span>
-					</a>
-
-					<a href='#' className='text-black hover:black dark:hover:text-white'>
-						<Image src='/github.svg' width={32} height={32} className='text-black' />
-						<span className='sr-only'>GitHub account</span>
-					</a>
+					<External href='/' src='/twitter.svg' alt='twitter' sr='Twitter page' />
+					<External href='/' src='/github.svg' alt='github' sr='GitHub account' />
 				</div>
 			</div>
 		</motion.footer>

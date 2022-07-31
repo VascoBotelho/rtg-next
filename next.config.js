@@ -1,10 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextTranslate = require('next-translate')
+
+module.exports = nextTranslate({
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
-		domains: ['cdn.discordapp.com', 'stripe.com']
-	}
-}
-
-module.exports = nextConfig
+		domains: ['cdn.discordapp.com']
+	},
+  webpack: (config) => config
+})

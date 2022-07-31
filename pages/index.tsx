@@ -1,58 +1,42 @@
 import type { NextPage } from 'next'
+import { useSession } from 'next-auth/react'
 
 import { motion } from 'framer-motion'
 
+import { useTranslation } from 'hooks'
+
 import Container from 'components/Container'
+import { Trans } from 'components/Trans'
 
 const Home: NextPage = () => {
+	const { data: session } = useSession()
+	const { t } = useTranslation('home')
+
 	return (
 		<Container footer>
-			<div>
-				<h1>Welcome</h1>
+			<div className='pb-12'>
+				<h3>
+					{t('introduction.title')} {session?.user?.name}
+				</h3>
 
 				<p>
-					A Discord Bot made for communities that like playing games together, this bot makes creating random teams
-					easier than ever before, with one simple command like <b>!game</b>, the bot will fetch all users from the
-					voice channel and will create and manage the teams for you.
+					<Trans i18nKey='home:introduction.description' components={{ b: <b /> }} />
 				</p>
 			</div>
 
-			<motion.div exit={{ opacity: 0 }}>
-				<h1>Arguments</h1>
+			<div className='pb-12'>
+				<h3>{t('arguments.title')}</h3>
+
+				<p>{t('arguments.description')}</p>
+			</div>
+
+			<div className='pb-12'>
+				<h1>{t('gamemodes.title')}</h1>
 
 				<p>
-					Arguments are a set of options that you can use to customize your games, like choosing team size, members per
-					team, add members or remove members, add custom voice channels, create asymmetric games like 1v4 and much
-					more.
+					<Trans i18nKey='home:gamemodes.description' components={{ b: <b /> }} />
 				</p>
-
-				<h1>Game Maps, Roles & Modes</h1>
-
-				<p>
-					The bot has different games to choice from and depending on the game they can have maps, roles and modes that
-					are randomly set. you can choose games like <b>Valorant</b>, <b>Counter Strike: Global Offensive</b>,{' '}
-					<b>League of Legends</b>, <b>Standoff 2</b>, <b>Rainbow Six Siege</b> and much more.
-				</p>
-			</motion.div>
-
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
+			</div>
 		</Container>
 	)
 }

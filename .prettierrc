@@ -15,8 +15,12 @@
 		"^next(.*)$",
 		"^recoil|framer-motion$",
 		"^atoms|core/(.*)|hooks|lib|utils$",
+		"^@headlessui/(.*)",
 		"^components/(.*)$",
-		"^[./]"
+		"^types$",
+		"^[./]",
+		"^@heroicons/(.*)$",
+		"^locales/(.*)$"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true

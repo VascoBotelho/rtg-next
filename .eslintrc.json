@@ -1,5 +1,7 @@
 {
-	"extends": "next",
+	"extends": [
+		"next"
+	],
 	"rules": {
 		"import/no-restricted-paths": [
 			"error",
